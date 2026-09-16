@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-16T21:21:26.606451+09:00",
+  "mode": "full",
+  "collected": 888,
+  "new": [
+    "minutes-2951",
+    "minutes-3315",
+    "minutes-3652"
+  ],
+  "changed": [],
+  "bodiesChecked": 888,
+  "provisional": 19,
+  "onlyTerm": [
+    "minutes-2951",
+    "minutes-3315",
+    "minutes-3652"
+  ],
+  "onlyYear": []
+}
