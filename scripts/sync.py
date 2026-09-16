@@ -84,7 +84,7 @@ def extract(raw):
         section=raw[start:end]
     parser=Plain(); parser.feed(section)
     text=re.sub(r'\n\s*\n+','\n\n',''.join(parser.parts)).strip()
-    if len(text)<100 or '○' not in text: raise ValueError('Empty or unexpected minutes body')
+    if len(text)<100 or ('○' not in text and not ('개의되지 않음' in text and '청주시의회' in text)): raise ValueError('Empty or unexpected minutes body')
     return text
 
 def canonical(text):
@@ -121,7 +121,9 @@ def run(mode):
     live=merge_inventories(years,terms,old)
     needed=[r for r in live.values() if mode=='full' or r['id'] not in old or old[r['id']].get('publication_status')!='published' or r['publication_status']=='provisional']
     print(f'{len(live)} listed; checking {len(needed)} bodies ({mode})',flush=True)
-    def download(row): return row['id'],extract(fetch(row['url']))
+    def download(row):
+        try: return row['id'],extract(fetch(row['url']))
+        except Exception as error: raise RuntimeError('Failed meeting '+row['id']) from error
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
         bodies={}
         for i,(key,value) in enumerate(pool.map(download,needed),1):

@@ -17,6 +17,9 @@ class SyncTests(unittest.TestCase):
         with self.assertRaises(ValueError): sync.merge_inventories([self.row()],[dict(self.row(),date='2024-01-01')],{})
     def test_error_page_rejected(self):
         with self.assertRaises(ValueError): sync.extract('<html>Service unavailable</html>')
+    def test_unopened_meeting(self):
+        text='청주시의회 본회의 의사일정 '+('안건 '*40)+'(개의되지 않음)'
+        self.assertEqual(sync.extract('<!-- 회의록내용 -->'+text+'<!--// 회의록내용 -->'),text)
     def test_body_and_updates(self):
         html='<!-- 회의록내용 --><p>○위원장 홍길동</p><p>'+('시설 점검을 요청합니다. '*20)+'</p><!--// 회의록내용 -->'
         text=sync.extract(html)
