@@ -147,7 +147,7 @@ def run(mode):
             if i%50==0: print(f'Checked {i}/{len(needed)}',flush=True)
     # All network operations must succeed before touching the working archive.
     with tempfile.TemporaryDirectory(prefix='minutes-sync-') as temp:
-        stage=Path(temp)
+        stage=Path(temp).resolve()
         for directory in ('minutes','indexes'): shutil.copytree(ROOT/directory,stage/directory)
         rows=[update_record(stage,r,old.get(r['id']),bodies.get(r['id']),stamp) for r in sorted(live.values(),key=lambda r:(r['date'],r['id']))]
         manifest=json.loads((ROOT/'manifest.json').read_text())

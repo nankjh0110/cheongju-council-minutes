@@ -1,4 +1,5 @@
-import sys, tempfile, unittest
+import sys, tempfile, unittest, json
+from unittest.mock import patch
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import sync
@@ -20,6 +21,21 @@ class SyncTests(unittest.TestCase):
     def test_unopened_meeting(self):
         text='청주시의회 본회의 의사일정 '+('안건 '*40)+'(개의되지 않음)'
         self.assertEqual(sync.extract('<!-- 회의록내용 -->'+text+'<!--// 회의록내용 -->'),text)
+    def test_full_pipeline_and_failed_fetch_preserves_archive(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder).resolve()
+            (root/'minutes').mkdir();(root/'indexes').mkdir()
+            (root/'indexes/meetings.json').write_text('[]')
+            (root/'manifest.json').write_text(json.dumps({'startDate':'2022-07-01'}))
+            (root/'README.md').write_text('<!-- archive-status --><!-- /archive-status -->')
+            html='<!-- 회의록내용 -->○위원장 홍길동\n'+('시설 점검 요청. '*40)+'<!--// 회의록내용 -->'
+            with patch.object(sync,'ROOT',root),patch.object(sync,'inventory',return_value=[self.row()]),patch.object(sync,'fetch',return_value=html):
+                sync.run('full')
+            baseline=(root/'indexes/meetings.json').read_bytes()
+            self.assertEqual(json.loads((root/'manifest.json').read_text())['collected'],1)
+            with patch.object(sync,'ROOT',root),patch.object(sync,'inventory',return_value=[self.row()]),patch.object(sync,'fetch',side_effect=OSError('offline')):
+                with self.assertRaises(RuntimeError): sync.run('full')
+            self.assertEqual((root/'indexes/meetings.json').read_bytes(),baseline)
     def test_body_and_updates(self):
         html='<!-- 회의록내용 --><p>○위원장 홍길동</p><p>'+('시설 점검을 요청합니다. '*20)+'</p><!--// 회의록내용 -->'
         text=sync.extract(html)
