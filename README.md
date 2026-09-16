@@ -6,6 +6,18 @@
 최종 확인: **2026-09-16** · **888건** (제3대 855건 / 제4대 33건). 임시회의록 19건 포함. 가장 최근 회의일: 2026-09-09.
 <!-- /archive-status -->
 
+## AI 에이전트에 설치하기
+
+회의록 검색·의원별 발언 분석·근거가 있는 예상질의 작성을 위한 스킬을 제공합니다.
+
+```bash
+npx skills add nankjh0110/cheongju-council-minutes --skill cheongju-council-minutes
+```
+
+[쉬운 사용법과 질문 예시](docs/AI-QUICKSTART.md) · [스킬 ZIP 다운로드](https://github.com/nankjh0110/cheongju-council-minutes/releases) · [스킬 지침](skills/cheongju-council-minutes/SKILL.md)
+
+스킬은 AI의 조회 방법을 안내하고 검색 도구를 제공합니다. 전체 회의록은 최초 사용 시 별도로 복제하며, 원격 MCP 서버나 AI 모델 자체를 제공하는 것은 아닙니다.
+
 ## 먼저 찾아보기
 
 - [연도별 회의록](indexes/years/README.md)

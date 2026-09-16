@@ -1,0 +1,4 @@
+interface:
+  display_name: "청주시의회 회의록"
+  short_description: "공개 회의록에서 의원 발언을 찾고 근거를 붙여 예상질의를 준비합니다"
+  default_prompt: "$cheongju-council-minutes를 사용해 공원관리과 관련 의원 발언을 확인하고, 근거가 있는 예상질의를 작성해 주세요."
