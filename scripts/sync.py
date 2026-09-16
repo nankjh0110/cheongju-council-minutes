@@ -1,6 +1,6 @@
 """Refresh the public archive from BOTH official inventories. No credentials needed."""
 import argparse, collections, concurrent.futures, datetime as dt, json, re, shutil
-import tempfile, time, urllib.parse, urllib.request, ssl
+import tempfile, time, urllib.parse, ssl, http.client, threading
 from html.parser import HTMLParser
 from pathlib import Path
 import build, validate
@@ -11,17 +11,33 @@ BASE = 'https://councilrec.cheongju.go.kr'
 TLS = ssl.create_default_context()
 TLS.minimum_version = ssl.TLSVersion.TLSv1_2
 TLS.set_ciphers('DEFAULT')
+CONNECTIONS = threading.local()
 
 def fetch(url, params=None):
+    parsed=urllib.parse.urlsplit(url)
+    if parsed.scheme!='https' or parsed.netloc!='councilrec.cheongju.go.kr':
+        raise ValueError('Unexpected source host')
+    target=parsed.path+('?' + parsed.query if parsed.query else '')
     for attempt in range(3):
         try:
             time.sleep(.2)
-            request = urllib.request.Request(url, None if params is None else urllib.parse.urlencode(params).encode(), headers={'User-Agent': 'CheongjuMinutesArchive/1.0 (+https://github.com/nankjh0110/cheongju-council-minutes)'})
-            with urllib.request.urlopen(request, timeout=40, context=TLS) as response:
-                return response.read().decode('utf-8-sig')
+            connection=getattr(CONNECTIONS,'connection',None)
+            if connection is None:
+                connection=http.client.HTTPSConnection(parsed.netloc,timeout=40,context=TLS)
+                CONNECTIONS.connection=connection
+            body=None if params is None else urllib.parse.urlencode(params).encode()
+            connection.request('GET' if body is None else 'POST',target,body,{
+                'User-Agent':'CheongjuMinutesArchive/1.0 (+https://github.com/nankjh0110/cheongju-council-minutes)',
+                'Content-Type':'application/x-www-form-urlencoded'})
+            response=connection.getresponse();data=response.read()
+            if response.status!=200: raise ValueError('Official source HTTP '+str(response.status))
+            return data.decode('utf-8-sig')
         except Exception:
-            if attempt == 2: raise
-            time.sleep(2 ** attempt)
+            connection=getattr(CONNECTIONS,'connection',None)
+            if connection: connection.close()
+            CONNECTIONS.connection=None
+            if attempt==2: raise
+            time.sleep(2**attempt)
 
 def inventory(kind, today):
     endpoint = BASE + '/minutes/svc/web/cms/mnts/SvcMntsTree' + kind + '.php'
