@@ -97,10 +97,9 @@ def update_record(root, row, old, text, now):
     unchanged=old and old.get('content_sha256')==content_hash
     if old and 'content_sha256' not in old:
         body=(root/old['path']).read_text().split('---\n',2)[2].lstrip('\n')
-        # The old export has source metadata before its first speaker heading.
-        tail=re.search(r'(?m)^##\s+○',body)
-        newtail=re.search(r'(?m)^○',text)
-        unchanged=bool(tail and newtail and canonical(body[tail.start():])==canonical(text[newtail.start():]))
+        # Compare the entire official body, including agenda and meeting header.
+        legacy=re.sub(r'\A# [^\n]*\n\n(?:- [^\n]*\n)+\n','',body,count=1)
+        unchanged=canonical(legacy)==canonical(text)
     result.update(content_sha256=content_hash, body_checked_at=now)
     if unchanged: return result
     source=f'# {row["title"]}\n\n- 출처: {row["url"]}\n- 회의일: {row["date"]}\n- 수집일: {now}\n- 원문 식별자: {row["id"].split("-")[1]}\n- 의회 대수: 제{row["term"]}대\n\n'+re.sub(r'(?m)^○','## ○',text)+'\n'
