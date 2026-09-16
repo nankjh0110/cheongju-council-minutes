@@ -1,27 +1,49 @@
-# 데이터 구조와 갱신
+# 자동 최신화와 관리
 
-현재 자료는 기존 audit-game 프로젝트에서 이미 수집한 공식 공개 회의록만 내보낸 것입니다. 로그인 데이터, R2, 업로드 자료, 환경변수, 개인 메모는 읽거나 복사하지 않습니다.
+## 예약 실행
 
-## 기존 수집본을 다시 반영하기
+GitHub Actions의 **Update minutes**가 매일 한국시간 오전 7시 17분(UTC 22:17)에 실행됩니다. 월요일은 전체 본문을 재확인하고 나머지 날은 신규·임시본 및 공개 상태가 달라진 자료를 확인합니다. 첫 갱신 때 상태 정보가 없는 기존 자료도 확인합니다.
+
+공식 연도별·대수별 목록을 함께 조회합니다. 한쪽 목록에만 있는 회의록도 수집하며 차이를 `reports/latest-sync.json`에 기록합니다. 수집 범위는 2022-07-01부터 제4대 임기 종료까지의 공개 자료입니다. 현재 날짜 이후 자료는 포함하지 않습니다. 임시회의록은 제외하지 않고 `publication_status: provisional`로 구분합니다.
+
+네트워크 요청, Markdown 변환, 전체 해시·날짜·발언 색인 검증이 성공한 경우에만 봇이 커밋합니다. 빈 목록, 기존 ID의 양쪽 목록에서의 소실, 목록 간 충돌, 원문 형식 변경은 실패로 처리합니다. 실패 시 기존 공개 자료는 유지되며 삭제하지 않습니다. 실패한 실행의 Actions 로그를 확인하고 원인을 해결한 뒤 다시 실행하세요.
+
+## 지금 갱신하기
+
+1. 저장소의 **Actions**를 엽니다.
+2. 왼쪽 **Update minutes**를 선택합니다.
+3. **Run workflow**에서 `main`과 `incremental`(신규·임시본) 또는 `full`(전체 본문)을 선택합니다.
+4. 초록색 성공 표시와 실행 요약을 확인합니다.
+
+CLI로도 실행할 수 있습니다.
 
 ```bash
-python3 scripts/build.py --source /path/to/audit-game
+gh workflow run sync.yml --repo nankjh0110/cheongju-council-minutes -f mode=full
+gh run list --repo nankjh0110/cheongju-council-minutes --workflow sync.yml
+```
+
+예약 중단은 해당 워크플로의 메뉴에서 **Disable workflow**, 재개는 **Enable workflow**입니다. 시간 변경은 `.github/workflows/sync.yml`의 cron 값을 수정합니다. GitHub 예약 실행은 지연되거나 누락될 수 있으며 공개 저장소가 60일 동안 활동이 없으면 비활성화될 수 있습니다. 마지막 성공 여부는 Actions 및 `manifest.json`의 `checkedAt`을 확인하세요. 실패 알림은 GitHub 계정의 Actions 알림 설정에서 켤 수 있습니다.
+
+별도 서버·OpenAI API 키·개인 GitHub 토큰이 필요하지 않습니다. 해당 저장소에 쓰기 권한이 있는 실행용 `GITHUB_TOKEN`만 사용합니다. 공식 공개 회의록만 수집하며 개인 업로드 자료는 접근하지 않습니다. 감사 대비 웹사이트의 자료는 별도로 연동해야 합니다.
+
+## 로컬 실행
+
+Python 3.10 이상, 외부 패키지 없이 실행합니다.
+
+```bash
+python3 scripts/sync.py --mode incremental
+python3 scripts/sync.py --mode full
 python3 scripts/validate.py
 python3 -m unittest discover -s tests
 ```
 
-build.py는 data/council-corpus.json과 data/catalog.json을 읽어 허용된 공개 minutes-숫자.md.bin만 해제합니다. 카탈로그의 원문 SHA-256과 대조하며, 원문을 고치지 않고 YAML 머리말을 붙입니다. 공개 출처 URL을 검사합니다. 갱신 전에 기존 수집 프로젝트에서 공식 목록과 원문을 수집해야 하며 이 저장소만으로 실시간 수집하지 않습니다.
+`build.py --source`는 최초 기존 앱 수집본 가져오기용입니다. 최신화된 저장소를 이전 수집본으로 덮어쓰지 마세요. 이미 보관한 Markdown의 색인만 재생성하려면 `python3 scripts/build.py`를 사용합니다.
 
-이미 내보낸 Markdown에서 발언자·연도별 색인만 다시 만들려면 `python3 scripts/build.py`를 실행합니다. 원문을 수정했다면 회의록 색인의 해시도 기존 공식 수집본을 통해 갱신해야 합니다. validate.py는 임의 변경을 실패로 처리합니다.
+## 데이터 구조
 
-## 스키마
+- `indexes/meetings.json`: id, title, date, year, term, committee, url, source_sha256, path, sha256, bytes, body_start_line. 자동 수집 후 publication_status, content_sha256, body_checked_at이 추가됩니다. 공개 상태는 공식 목록 표기이며 내용의 정확성을 보증하지 않습니다.
+- `manifest.json`: 전체 수집 범위·확인 시각·대수별/연도별 건수·임시본 수.
+- `reports/latest-sync.json`: 실행 모드, 신규/본문 변경 ID, 본문 확인 수, 연도별·대수별 목록 차이. 이전 보고서는 Git 이력에서 확인합니다.
+- `indexes/turns/*.jsonl`: 발언 표기 구간의 1부터 시작하는 줄 번호. 일부 부록도 후보 구간에 포함되므로 질문 횟수로 해석하지 않습니다.
 
-meetings.json의 각 항목: id, title, date, year, term, committee, url, source_sha256, path, sha256, bytes, body_start_line.
-
-turns/*.jsonl의 각 항목: id, meeting_id, path, date, term, committee, speaker, role, label, start_line, end_line. 줄 번호는 1부터 시작하고 끝 줄을 포함합니다. 식별하지 못한 발언자 표기는 speaker가 빈 문자열입니다. ○로 시작하는 일부 부록 표기도 후보 구간에 포함될 수 있습니다. 통계는 발언·질문 횟수의 공식 집계가 아닙니다.
-
-speakers.json은 이름 문자열별 보조 집계이며 동명이인 분리 식별자는 아닙니다. 현재 명단에 없는 과거 의원·공무원도 포함됩니다.
-
-## 게시 이력
-
-첫 반영은 공개 수집본 일괄 가져오기입니다. 과거 회의일로 커밋을 소급하지 않고 원문 정정은 후속 커밋으로 보존합니다. 기준일·누락·제외 범위를 manifest.json과 README에 함께 갱신하세요. GitHub Actions는 push/PR 시 무결성과 합성 검색 테스트만 수행하며 자동 수집·API 분석은 하지 않습니다.
+원문 정정은 후속 커밋에 보존합니다. 커밋 날짜를 회의일로 소급하지 않습니다. 최초 수집 이전의 모든 교정 이력을 재구성하지 않습니다. 첨부파일·사진판 PDF·동영상 전체 수집은 지원하지 않습니다.
