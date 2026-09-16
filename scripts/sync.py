@@ -1,18 +1,23 @@
 """Refresh the public archive from BOTH official inventories. No credentials needed."""
 import argparse, collections, concurrent.futures, datetime as dt, json, re, shutil
-import tempfile, time, urllib.parse, urllib.request
+import tempfile, time, urllib.parse, urllib.request, ssl
 from html.parser import HTMLParser
 from pathlib import Path
 import build, validate
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://councilrec.cheongju.go.kr'
+# Official server needs RSA TLS 1.2 suites omitted by Python 3.12 defaults.
+# Keep certificate/hostname verification and TLS >= 1.2 enabled.
+TLS = ssl.create_default_context()
+TLS.minimum_version = ssl.TLSVersion.TLSv1_2
+TLS.set_ciphers('DEFAULT')
 
 def fetch(url, params=None):
     for attempt in range(3):
         try:
             time.sleep(.2)
             request = urllib.request.Request(url, None if params is None else urllib.parse.urlencode(params).encode(), headers={'User-Agent': 'CheongjuMinutesArchive/1.0 (+https://github.com/nankjh0110/cheongju-council-minutes)'})
-            with urllib.request.urlopen(request, timeout=40) as response:
+            with urllib.request.urlopen(request, timeout=40, context=TLS) as response:
                 return response.read().decode('utf-8-sig')
         except Exception:
             if attempt == 2: raise
