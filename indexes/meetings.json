@@ -14787,7 +14787,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "9eccab97dfcfe2d19eadcbe9b158592a7342ecbf013e8d791a2b7316b9315315",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3982",
@@ -14804,7 +14804,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "470e5cead2b944488312ff999c14fbfbeaac71cda779da7eada61c4acff090c3",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3983",
@@ -14821,7 +14821,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "5b7c61318a5843b8cba4b92ab16093787f68e0c654f2625ef97cf680b1b4577f",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3984",
@@ -14838,7 +14838,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "02f7a0a07cb723171d5f0bce61c1fa629ef9fbae56c8770d84b232c03dfc9d71",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3985",
@@ -14855,7 +14855,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "511bfa837ad126c85cd9f2137822ad2285ccc857b81c12b83bd1069db9c1001d",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3986",
@@ -14872,7 +14872,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "2d0d87f4207d54c34f25e534da96208eeaab4c285629a380f1e94790d007aed4",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3988",
@@ -14889,7 +14889,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "b8a27a38acd67a7f7852a84ff05b7f6dcd5a54c20af4d95cbb1fc77cadd386ef",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3993",
@@ -14906,7 +14906,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "b1aceef2fc36a9ef006dded58ad7e8f6a20d96649a7b16bd09252bcf05500f29",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3994",
@@ -14923,7 +14923,24 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "b62d061403429074f2f74206594c77d27b4b417acbc6d434c6933ece18657069",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
+  },
+  {
+    "id": "minutes-4004",
+    "title": "경제문화위원회 제1호(2026.08.28 금요일)",
+    "date": "2026-08-28",
+    "year": 2026,
+    "term": 4,
+    "committee": "C306",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4004",
+    "content_sha256": "245832341f02baefc0805ee7537750ba46400d025c7983f394f43b671b553f94",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "3e6c21b1bf4a2cb6f91d7639e974b8bfee0b35636048c671507486dc29de5fb0",
+    "path": "minutes/term-4/2026/minutes-4004.md",
+    "sha256": "ad0a56dc21270504e53a731b20189c7ccffb57e89890fc01403c954a06b03711",
+    "bytes": 165460,
+    "body_start_line": 12
   },
   {
     "id": "minutes-3987",
@@ -14940,7 +14957,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "fdef962223b81e0d87da8b2ebeebd8eb91ad9f4fdefbf7ea30a87d8fca5a3bd7",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3990",
@@ -14957,7 +14974,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "ae179729f6630fd4ee1c71448f6aee039d2cc91b4c0f089a8b13c9727c18a3dd",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3995",
@@ -14974,7 +14991,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "9d27d5d170ff06b05226d904c562d17a6e9838d68b0aae5af266faa65b668e00",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-4001",
@@ -14984,14 +15001,48 @@
     "term": 4,
     "committee": "C206",
     "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4001",
-    "source_sha256": "9d734c85223aacf86d0541c86aa93b21957ba7effb10f1e894fb78c7631b7d65",
+    "source_sha256": "c538fcac98d0e09e40ae960baef7709f09118fdae5965610a074f9980dc0dc6e",
     "path": "minutes/term-4/2026/minutes-4001.md",
-    "sha256": "4e2ef2154607b958174758c3de5b31c7ae9cb695a1aad1bb48cb47201c9db50c",
-    "bytes": 162902,
+    "sha256": "90194c4f2a03a4514fa9a07a6738ee3498a8d0601997d3db063cbfbc14674624",
+    "bytes": 162948,
     "body_start_line": 12,
     "publication_status": "provisional",
-    "content_sha256": "99ccafc7632705c84c37efc47e208b9ae57d629e60d51eb0ab986e05a79c2229",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "content_sha256": "54bf5d866e7a909d8d72aaea770424aa397c96a0a006d0678e01ffdab0b35ce9",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
+  },
+  {
+    "id": "minutes-4006",
+    "title": "경제문화위원회 제2호(2026.08.31 월요일)",
+    "date": "2026-08-31",
+    "year": 2026,
+    "term": 4,
+    "committee": "C306",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4006",
+    "content_sha256": "c3b4d9b7579fa81af3a2f9320fe0a31933f445cca58cc2201157ace121875e6c",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "57eafc7f5b32d74e45f6e7cde402772f27103ad38a9d7819e9ea1b5c34418e5b",
+    "path": "minutes/term-4/2026/minutes-4006.md",
+    "sha256": "f6a6f3642cecf976e7c528305fd749e2de47ab005daa7a8af18f498b9e2697c5",
+    "bytes": 94297,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4013",
+    "title": "보건환경위원회 제2호(2026.08.31 월요일)",
+    "date": "2026-08-31",
+    "year": 2026,
+    "term": 4,
+    "committee": "C703",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4013",
+    "content_sha256": "35456877f47e9f1092630444be038ec28c8a12d4462748cc391e340d45e747c3",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "cf600cd5163dd3c1e0727dbc42609cfc7410334a98c2e59ad13033ab78478f8b",
+    "path": "minutes/term-4/2026/minutes-4013.md",
+    "sha256": "7f76b874688bd66516468818e3646cd0733df8726d2162da05d0d22fe4f6035d",
+    "bytes": 218987,
+    "body_start_line": 12
   },
   {
     "id": "minutes-3989",
@@ -15008,7 +15059,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "f2b170fbc2ff92f6b89fcaf957064ac1030ff84ed41bc3d6c45ba9943bb8805c",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3992",
@@ -15025,7 +15076,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "e11270466097b1224ea53f91996c5272e96d3ecaa5196c1a15735a72408bc64e",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-4000",
@@ -15042,7 +15093,41 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "1e740b8c4a0da9dd74074660453c5183dc7ea7bd5d42ae5c0fe6e2b739c2d2a5",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
+  },
+  {
+    "id": "minutes-4007",
+    "title": "경제문화위원회 제3호(2026.09.01 화요일)",
+    "date": "2026-09-01",
+    "year": 2026,
+    "term": 4,
+    "committee": "C306",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4007",
+    "content_sha256": "0380050f50dab5c7722e031d0457c2296898d0b1c94aefbf05acd61b0887feb2",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "5d1d39bf70d3f7ec452228cf4861450e3b58899bf10c9940fbd4a2bfd5eaaf1a",
+    "path": "minutes/term-4/2026/minutes-4007.md",
+    "sha256": "fc5f86df7cbff1776899e89706f3198f057a9f71323087cdd03e5c811ad2413d",
+    "bytes": 51185,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4014",
+    "title": "보건환경위원회 제3호(2026.09.01 화요일)",
+    "date": "2026-09-01",
+    "year": 2026,
+    "term": 4,
+    "committee": "C703",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4014",
+    "content_sha256": "2bb1398370c4790c526c9031d5844bf6527f6889af5eaafc764590e56622e5ff",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "00b28ada8ef6af09a97d51d1ccab80783f6a8a83a0be667a172bc9a18f70e056",
+    "path": "minutes/term-4/2026/minutes-4014.md",
+    "sha256": "9255f50a87bbf22e0cb3f285a1d472fea105fe1f37d4fd28d292225e1d140f37",
+    "bytes": 40191,
+    "body_start_line": 12
   },
   {
     "id": "minutes-3996",
@@ -15059,7 +15144,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "714c78cabcda6e02ed85e8b7e9dab53ea5b090e3cdea38ffb9a5afcb603606d9",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-3997",
@@ -15076,7 +15161,7 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "489c6c7cf00cd013904ea69c7c0c65ae41b8d17a9b9760b89320b3f7d870630a",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   },
   {
     "id": "minutes-4002",
@@ -15088,11 +15173,96 @@
     "publication_status": "provisional",
     "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4002",
     "content_sha256": "01cae0c8955f88f6e29c4cbeaf7eb8e11cc72fd6adc5f7b7013d2620eda41a54",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
     "source_sha256": "fe745c67269433956e2b02f5f98282f23ef6b589ea829e694c9b11e5d8601ac0",
     "path": "minutes/term-4/2026/minutes-4002.md",
     "sha256": "e5def237dd98fe5cc95fb569f5a748fca6a2ff238d0c3ec2f74b01afd91d3e35",
     "bytes": 118552,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4003",
+    "title": "행정안전위원회 제3호(2026.09.02 수요일)",
+    "date": "2026-09-02",
+    "year": 2026,
+    "term": 4,
+    "committee": "C206",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4003",
+    "content_sha256": "ed283086c1b3a8891401039313466e1f24cfbf69b6f9e291da79838714d335eb",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "d844c640fc02f33119c4a8841bf68e03697bbca5a31d03be6aa86ecf17e3e9b7",
+    "path": "minutes/term-4/2026/minutes-4003.md",
+    "sha256": "a09c8cd51746cbfa44aa29635ae8f59146d7898a1cea2706897892c71efbec9f",
+    "bytes": 249319,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4010",
+    "title": "도시건설위원회 제4호(2026.09.03 목요일)",
+    "date": "2026-09-03",
+    "year": 2026,
+    "term": 4,
+    "committee": "C601",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4010",
+    "content_sha256": "305947bfdfc39b248a0de80fca9422e58ed5d9f949d7f6ac4de881eca37439cf",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "1eea321dfb51aa77d1e6514c9df843ded33aad316e6ca3e3ca5e0a3368d02dbf",
+    "path": "minutes/term-4/2026/minutes-4010.md",
+    "sha256": "0bdbc389deae98b7002eef333c65b184d96cde64f9fe6b1506bd6be44cd2a8fb",
+    "bytes": 208996,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4011",
+    "title": "경제문화위원회 제4호(2026.09.03 목요일)",
+    "date": "2026-09-03",
+    "year": 2026,
+    "term": 4,
+    "committee": "C306",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4011",
+    "content_sha256": "2585d090c06cf98a14fea9173ccf764469d877cf86ee9d0258d7a120e2fbb85f",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "16fe8ad2e30c9e8ed148518b7b18a63f91be1224376b590eaacea30788972def",
+    "path": "minutes/term-4/2026/minutes-4011.md",
+    "sha256": "19e7c9447789205668870110336f2e4da9b810425e0a136a1a8707e4bad532a6",
+    "bytes": 176087,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4012",
+    "title": "예산결산특별위원회 제2호(2026.09.04 금요일)",
+    "date": "2026-09-04",
+    "year": 2026,
+    "term": 4,
+    "committee": "G100",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4012",
+    "content_sha256": "8e760a39af36884f0ba46a0cf4f9b5ab6bb8aea6648607f6a8a4896ef189b466",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "c44350a93474a7e6264d361ecd9b06274951c013cd7fba50bf7766d2aab8c0b7",
+    "path": "minutes/term-4/2026/minutes-4012.md",
+    "sha256": "6aeffc308cb3644dec2b039f8bac0307865631f606707b69797a52a48280408c",
+    "bytes": 305103,
+    "body_start_line": 12
+  },
+  {
+    "id": "minutes-4005",
+    "title": "예산결산특별위원회 제3호(2026.09.07 월요일)",
+    "date": "2026-09-07",
+    "year": 2026,
+    "term": 4,
+    "committee": "G100",
+    "publication_status": "provisional",
+    "url": "https://councilrec.cheongju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?schSn=4005",
+    "content_sha256": "ceb1d15c394ca9b5051bb75b362517fa72165ca2d8b70f83b81cc5fa2dd22e3e",
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00",
+    "source_sha256": "544014a03d57769b0a248641859fcf28ed701bc08f15cc667f8c33c6c812206c",
+    "path": "minutes/term-4/2026/minutes-4005.md",
+    "sha256": "632a895b706b1ff2a2ae4610be026f5a3d399f1444744beeb4ba6e0ce2892930",
+    "bytes": 166219,
     "body_start_line": 12
   },
   {
@@ -15110,6 +15280,6 @@
     "body_start_line": 12,
     "publication_status": "provisional",
     "content_sha256": "b74926700f5c99cb3e44fdb5c80c5f769aaf1a85623b39272dd993791c6837b0",
-    "body_checked_at": "2026-09-18T09:14:36.465243+09:00"
+    "body_checked_at": "2026-09-19T09:18:15.160514+09:00"
   }
 ]
