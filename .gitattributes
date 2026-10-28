@@ -1,0 +1,2 @@
+# Archive hashes refer to UTF-8 bytes with LF line endings on every platform.
+* text=auto eol=lf
