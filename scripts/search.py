@@ -5,15 +5,15 @@ ROOT=Path(__file__).resolve().parents[1]
 def search(query,years=None,term=None,committee=None,speaker=None,limit=20,offset=0):
  if not query.strip():raise ValueError('검색어가 필요합니다.')
  pattern=re.compile(r'\s*'.join(re.escape(x) for x in query.split()),re.I)
- meetings=json.loads((ROOT/'indexes/meetings.json').read_text());selected={m['id']:m for m in meetings if (not years or m['year'] in years) and (not term or m['term']==term) and (not committee or m['committee']==committee or committee in m['title'])};results=[];cache={}
+ meetings=json.loads((ROOT/'indexes/meetings.json').read_text(encoding='utf-8'));selected={m['id']:m for m in meetings if (not years or m['year'] in years) and (not term or m['term']==term) and (not committee or m['committee']==committee or committee in m['title'])};results=[];cache={}
  def lines(m):
-  if m['id'] not in cache:cache[m['id']]=(ROOT/m['path']).read_text().splitlines()
+  if m['id'] not in cache:cache[m['id']]=(ROOT/m['path']).read_text(encoding='utf-8').splitlines()
   return cache[m['id']]
  if speaker:
   candidates=[]
   for shard in sorted((ROOT/'indexes/turns').glob('*.jsonl')):
    if years and int(shard.stem) not in years:continue
-   with shard.open() as f:candidates.extend(json.loads(line) for line in f if line.strip())
+   with shard.open(encoding='utf-8') as f:candidates.extend(json.loads(line) for line in f if line.strip())
   candidates=[t for t in candidates if t['speaker']==speaker and t['meeting_id'] in selected]
  else:candidates=[{'meeting_id':m['id'],'start_line':m['body_start_line'],'end_line':None} for m in selected.values()]
  for t in candidates:

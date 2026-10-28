@@ -4,9 +4,9 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def digest(b):return hashlib.sha256(b).hexdigest()
 def save(path,data):
- path.parent.mkdir(parents=True,exist_ok=True);path.write_text(data,encoding='utf-8')
+ path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data.encode('utf-8'))
 def export(source):
- corpus=json.loads((source/'data/council-corpus.json').read_text());catalog={r['id']:r for r in json.loads((source/'data/catalog.json').read_text())};records=[]
+ corpus=json.loads((source/'data/council-corpus.json').read_text(encoding='utf-8'));catalog={r['id']:r for r in json.loads((source/'data/catalog.json').read_text(encoding='utf-8'))};records=[]
  for m in sorted(corpus['minutes'],key=lambda x:(x['date'],x['id'])):
   assert '2022-07-01'<=m['date']<=corpus['endDate'];assert m['term']==(3 if m['date']<'2026-07-01' else 4)
   assert re.fullmatch(r'minutes-\d+',m['id']);assert m['asset']=='/corpus/'+m['id']+'.md.bin';assert m['url'].startswith('https://councilrec.cheongju.go.kr/')
@@ -21,9 +21,9 @@ def export(source):
  manifest={k:corpus[k] for k in ['startDate','endDate','checkedAt','latestMeetingDate','listed','collected','byYear','byTerm','sourceUrl','unavailable']};manifest.update(schema_version=1,scope='공식 공개 목록의 제3·4대 회의록 수집본. 첨부파일·사진판·미공개 자료 전체를 보장하지 않습니다.',history_policy='회의일은 메타데이터에 기록합니다. Git 커밋 시간은 실제 수집·변경 시간이며 회의일로 소급하지 않습니다.')
  save(ROOT/'manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');reindex();print(f'Exported {len(records)} meetings')
 def reindex():
- meetings=json.loads((ROOT/'indexes/meetings.json').read_text());turns=[];speakers=collections.defaultdict(list)
+ meetings=json.loads((ROOT/'indexes/meetings.json').read_text(encoding='utf-8'));turns=[];speakers=collections.defaultdict(list)
  for m in meetings:
-  lines=(ROOT/m['path']).read_text().splitlines();starts=[i for i,line in enumerate(lines) if re.match(r'^##\s+○',line)]
+  lines=(ROOT/m['path']).read_text(encoding='utf-8').splitlines();starts=[i for i,line in enumerate(lines) if re.match(r'^##\s+○',line)]
   for n,start in enumerate(starts):
    end=starts[n+1] if n+1<len(starts) else len(lines);heading=re.sub(r'^##\s+○','',lines[start]);label=re.split(r'\u2003|\t',heading,maxsplit=1)[0].strip()
    # Older records place speech on a new line; only accept a short two-token label.

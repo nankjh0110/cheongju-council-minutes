@@ -69,7 +69,7 @@ def inventory(kind, today):
         out.extend(rows)
     return out
 
-def merge_inventories(year, term, old):
+def merge_inventories(year, term, old, superseded=None):
     if not year or not term: raise ValueError('Empty inventory; refusing update')
     merged={}
     for row in year+term:
@@ -77,7 +77,17 @@ def merge_inventories(year, term, old):
         if prior and any(prior[k]!=row[k] for k in ('date','committee','publication_status')): raise ValueError('Conflicting inventory: '+row['id'])
         merged[row['id']]=row
     missing=set(old)-set(merged)
+    # The council republishes a finalized record under a new id and drops the provisional one.
+    # Accept only an unambiguous one-to-one replacement; anything else still needs manual review.
+    replaced={}
+    for old_id in sorted(missing):
+        prior=old[old_id]
+        if prior.get('publication_status')!='provisional': continue
+        candidates=[r['id'] for r in merged.values() if r['id'] not in old and r['publication_status']=='published' and all(r.get(k)==prior.get(k) for k in ('date','committee','title'))]
+        if len(candidates)==1 and candidates[0] not in replaced.values(): replaced[old_id]=candidates[0]
+    missing-=set(replaced)
     if missing: raise ValueError('Existing records disappeared; manual review required: '+','.join(sorted(missing)))
+    if superseded is not None: superseded.update(replaced)
     return merged
 
 class Plain(HTMLParser):
@@ -112,7 +122,7 @@ def update_record(root, row, old, text, now):
     content_hash=build.digest(canonical(text).encode())
     unchanged=old and old.get('content_sha256')==content_hash
     if old and 'content_sha256' not in old:
-        body=(root/old['path']).read_text().split('---\n',2)[2].lstrip('\n')
+        body=(root/old['path']).read_text(encoding='utf-8').split('---\n',2)[2].lstrip('\n')
         # Compare the entire official body, including agenda and meeting header.
         legacy=re.sub(r'\A# [^\n]*\n\n(?:- [^\n]*\n)+\n','',body,count=1)
         unchanged=canonical(legacy)==canonical(text)
@@ -129,12 +139,14 @@ def update_record(root, row, old, text, now):
 def run(mode):
     now=dt.datetime.now(dt.timezone(dt.timedelta(hours=9))); today=now.date().isoformat(); stamp=now.isoformat()
     if mode=='auto': mode='full' if now.weekday()==0 else 'incremental'
-    old={r['id']:r for r in json.loads((ROOT/'indexes/meetings.json').read_text())}
+    old={r['id']:r for r in json.loads((ROOT/'indexes/meetings.json').read_text(encoding='utf-8'))}
     print('Reading both official inventories...',flush=True)
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
         yf=pool.submit(inventory,'Year',today); tf=pool.submit(inventory,'Gnrtn',today)
         years,terms=yf.result(),tf.result()
-    live=merge_inventories(years,terms,old)
+    superseded={}
+    live=merge_inventories(years,terms,old,superseded)
+    for old_id,new_id in superseded.items(): print(f'Provisional {old_id} finalized as {new_id}',flush=True)
     needed=[r for r in live.values() if mode=='full' or r['id'] not in old or old[r['id']].get('publication_status')!='published' or r['publication_status']=='provisional']
     print(f'{len(live)} listed; checking {len(needed)} bodies ({mode})',flush=True)
     def download(row):
@@ -148,11 +160,12 @@ def run(mode):
     # All network operations must succeed before touching the working archive.
     with tempfile.TemporaryDirectory(prefix='minutes-sync-') as temp:
         stage=Path(temp).resolve()
-        for directory in ('minutes','indexes'): shutil.copytree(ROOT/directory,stage/directory)
+        dropped={Path(old[old_id]['path']).name for old_id in superseded}
+        for directory in ('minutes','indexes'): shutil.copytree(ROOT/directory,stage/directory,ignore=lambda _,names:[n for n in names if n in dropped])
         rows=[update_record(stage,r,old.get(r['id']),bodies.get(r['id']),stamp) for r in sorted(live.values(),key=lambda r:(r['date'],r['id']))]
-        manifest=json.loads((ROOT/'manifest.json').read_text())
+        manifest=json.loads((ROOT/'manifest.json').read_text(encoding='utf-8'))
         manifest.update(endDate=today,checkedAt=stamp,latestMeetingDate=max(r['date'] for r in rows),listed=len(rows),collected=len(rows),byYear=dict(collections.Counter(str(r['year']) for r in rows)),byTerm=dict(collections.Counter(str(r['term']) for r in rows)),provisional=sum(r['publication_status']=='provisional' for r in rows))
-        report=dict(checkedAt=stamp,mode=mode,collected=len(rows),new=sorted(set(live)-set(old)),changed=[r['id'] for r in rows if r['id'] in old and r['sha256']!=old[r['id']]['sha256']],bodiesChecked=len(bodies),provisional=manifest['provisional'],onlyTerm=sorted({r['id'] for r in terms}-{r['id'] for r in years}),onlyYear=sorted({r['id'] for r in years}-{r['id'] for r in terms}))
+        report=dict(checkedAt=stamp,mode=mode,collected=len(rows),new=sorted(set(live)-set(old)),changed=[r['id'] for r in rows if r['id'] in old and r['sha256']!=old[r['id']]['sha256']],bodiesChecked=len(bodies),superseded=superseded,provisional=manifest['provisional'],onlyTerm=sorted({r['id'] for r in terms}-{r['id'] for r in years}),onlyYear=sorted({r['id'] for r in years}-{r['id'] for r in terms}))
         for path,obj in [('indexes/meetings.json',rows),('manifest.json',manifest),('reports/latest-sync.json',report)]: build.save(stage/path,json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
         previous_build,previous_validate=build.ROOT,validate.ROOT
         try:
@@ -161,7 +174,8 @@ def run(mode):
         for file in stage.rglob('*'):
             if file.is_file():
                 target=ROOT/file.relative_to(stage);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
-    readme=(ROOT/'README.md').read_text()
+        for old_id in superseded: (ROOT/old[old_id]['path']).unlink(missing_ok=True)
+    readme=(ROOT/'README.md').read_text(encoding='utf-8')
     status=f'<!-- archive-status -->\n최종 확인: **{today}** · **{len(rows)}건** (제3대 {manifest["byTerm"].get("3",0)}건 / 제4대 {manifest["byTerm"].get("4",0)}건). 임시회의록 {manifest["provisional"]}건 포함. 가장 최근 회의일: {manifest["latestMeetingDate"]}.\n<!-- /archive-status -->'
     readme=re.sub(r'<!-- archive-status -->[\s\S]*?<!-- /archive-status -->',lambda _:status,readme)
     build.save(ROOT/'README.md',readme);print(json.dumps(report,ensure_ascii=False),flush=True)
