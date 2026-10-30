@@ -1,10 +1,8 @@
 {
-  "checkedAt": "2026-10-29T10:47:18.746746+09:00",
+  "checkedAt": "2026-10-30T10:55:51.942118+09:00",
   "mode": "incremental",
   "collected": 905,
-  "new": [
-    "minutes-4022"
-  ],
+  "new": [],
   "changed": [],
   "bodiesChecked": 6,
   "superseded": {},
