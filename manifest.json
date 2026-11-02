@@ -1,25 +1,25 @@
 {
   "startDate": "2022-07-01",
-  "endDate": "2026-11-01",
-  "checkedAt": "2026-11-01T10:06:52.194997+09:00",
+  "endDate": "2026-11-02",
+  "checkedAt": "2026-11-02T10:29:32.025715+09:00",
   "latestMeetingDate": "2026-10-14",
-  "listed": 905,
-  "collected": 905,
+  "listed": 907,
+  "collected": 907,
   "byYear": {
     "2022": 141,
     "2023": 224,
     "2024": 217,
     "2025": 209,
-    "2026": 114
+    "2026": 116
   },
   "byTerm": {
     "3": 855,
-    "4": 50
+    "4": 52
   },
   "sourceUrl": "https://councilrec.cheongju.go.kr/",
   "unavailable": [],
   "schema_version": 1,
   "scope": "공식 공개 목록의 제3·4대 회의록 수집본. 첨부파일·사진판·미공개 자료 전체를 보장하지 않습니다.",
   "history_policy": "회의일은 메타데이터에 기록합니다. Git 커밋 시간은 실제 수집·변경 시간이며 회의일로 소급하지 않습니다.",
-  "provisional": 6
+  "provisional": 8
 }
