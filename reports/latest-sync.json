@@ -1,15 +1,17 @@
 {
-  "checkedAt": "2026-11-02T10:29:32.025715+09:00",
-  "mode": "full",
-  "collected": 907,
+  "checkedAt": "2026-11-03T12:28:00.237838+09:00",
+  "mode": "incremental",
+  "collected": 911,
   "new": [
-    "minutes-4024",
-    "minutes-4025"
+    "minutes-4026",
+    "minutes-4027",
+    "minutes-4030",
+    "minutes-4031"
   ],
   "changed": [],
-  "bodiesChecked": 907,
+  "bodiesChecked": 12,
   "superseded": {},
-  "provisional": 8,
+  "provisional": 12,
   "onlyTerm": [
     "minutes-2951",
     "minutes-3315",

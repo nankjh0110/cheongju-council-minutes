@@ -99,14 +99,14 @@
   },
   {
     "name": "공무원",
-    "turn_count": 770,
-    "meeting_count": 770,
+    "turn_count": 773,
+    "meeting_count": 773,
     "roles": [
       "기록",
       "출석"
     ],
     "first_date": "2022-07-01",
-    "last_date": "2026-10-14"
+    "last_date": "2026-10-20"
   },
   {
     "name": "곽현희",
@@ -517,15 +517,15 @@
   },
   {
     "name": "김명영",
-    "turn_count": 567,
-    "meeting_count": 33,
+    "turn_count": 576,
+    "meeting_count": 34,
     "roles": [
       "관광과장",
       "상당구미원면장",
       "회계과장"
     ],
     "first_date": "2024-03-25",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-13"
   },
   {
     "name": "김미경",
@@ -814,8 +814,8 @@
   },
   {
     "name": "김연웅",
-    "turn_count": 1777,
-    "meeting_count": 45,
+    "turn_count": 1778,
+    "meeting_count": 46,
     "roles": [
       "도시재생과장",
       "재난안전실장",
@@ -823,7 +823,7 @@
       "환경관리본부차집관로팀장"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-13"
   },
   {
     "name": "김연화",
@@ -870,15 +870,15 @@
   },
   {
     "name": "김영순",
-    "turn_count": 493,
-    "meeting_count": 42,
+    "turn_count": 495,
+    "meeting_count": 43,
     "roles": [
       "의사팀장",
       "의정팀장",
       "전문위원"
     ],
     "first_date": "2022-07-01",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-20"
   },
   {
     "name": "김영철",
@@ -947,8 +947,8 @@
   },
   {
     "name": "김완식",
-    "turn_count": 3248,
-    "meeting_count": 168,
+    "turn_count": 3279,
+    "meeting_count": 169,
     "roles": [
       "부위원장",
       "위원",
@@ -956,7 +956,7 @@
       "의원"
     ],
     "first_date": "2022-07-06",
-    "last_date": "2026-09-09"
+    "last_date": "2026-10-13"
   },
   {
     "name": "김용규",
@@ -1248,15 +1248,15 @@
   },
   {
     "name": "김진석",
-    "turn_count": 111,
-    "meeting_count": 7,
+    "turn_count": 147,
+    "meeting_count": 9,
     "roles": [
       "위원",
       "위원장",
       "윤리특위위원장"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-20"
   },
   {
     "name": "김진섭",
@@ -1313,15 +1313,15 @@
   },
   {
     "name": "김춘일",
-    "turn_count": 126,
-    "meeting_count": 6,
+    "turn_count": 141,
+    "meeting_count": 8,
     "roles": [
       "주택토지국공공건축1팀장",
       "청원구건축과장",
       "체육시설과장"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "김태순",
@@ -1449,15 +1449,15 @@
   },
   {
     "name": "김훈아",
-    "turn_count": 227,
-    "meeting_count": 26,
+    "turn_count": 232,
+    "meeting_count": 27,
     "roles": [
       "상당구민원지적과장",
       "서원구세무과장",
       "세정과장"
     ],
     "first_date": "2023-02-16",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-14"
   },
   {
     "name": "김희랑",
@@ -1527,8 +1527,8 @@
   },
   {
     "name": "남일현",
-    "turn_count": 4888,
-    "meeting_count": 131,
+    "turn_count": 4937,
+    "meeting_count": 132,
     "roles": [
       "예결특위위원장",
       "위원",
@@ -1639,15 +1639,15 @@
   },
   {
     "name": "류권상",
-    "turn_count": 368,
-    "meeting_count": 23,
+    "turn_count": 369,
+    "meeting_count": 24,
     "roles": [
       "신성장전략국재생전략팀장",
       "재난대응과장",
       "흥덕구건설과장"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-13"
   },
   {
     "name": "류근식",
@@ -1663,14 +1663,14 @@
   },
   {
     "name": "류지호",
-    "turn_count": 815,
-    "meeting_count": 20,
+    "turn_count": 829,
+    "meeting_count": 21,
     "roles": [
       "자치행정과장",
       "청년정책담당관"
     ],
     "first_date": "2025-08-26",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-13"
   },
   {
     "name": "마재광",
@@ -1835,13 +1835,13 @@
   },
   {
     "name": "박동영",
-    "turn_count": 1,
-    "meeting_count": 1,
+    "turn_count": 16,
+    "meeting_count": 2,
     "roles": [
       "청주시립미술관관리팀장"
     ],
     "first_date": "2024-08-27",
-    "last_date": "2024-08-27"
+    "last_date": "2026-10-14"
   },
   {
     "name": "박미의",
@@ -2102,6 +2102,16 @@
     ],
     "first_date": "2024-11-21",
     "last_date": "2026-01-30"
+  },
+  {
+    "name": "박응주",
+    "turn_count": 4,
+    "meeting_count": 1,
+    "roles": [
+      "청주시립미술관장"
+    ],
+    "first_date": "2026-10-14",
+    "last_date": "2026-10-14"
   },
   {
     "name": "박인숙",
@@ -2423,8 +2433,8 @@
   },
   {
     "name": "배성철",
-    "turn_count": 149,
-    "meeting_count": 13,
+    "turn_count": 158,
+    "meeting_count": 14,
     "roles": [
       "위원",
       "위원장",
@@ -2432,7 +2442,7 @@
       "의회운영위원장"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-10-12"
+    "last_date": "2026-10-14"
   },
   {
     "name": "백두흠",
@@ -2470,8 +2480,8 @@
   },
   {
     "name": "변은영",
-    "turn_count": 2628,
-    "meeting_count": 119,
+    "turn_count": 2660,
+    "meeting_count": 121,
     "roles": [
       "보건환경위원장",
       "위원",
@@ -2480,7 +2490,7 @@
       "의회운영위원장"
     ],
     "first_date": "2022-07-06",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-20"
   },
   {
     "name": "변의수",
@@ -2583,8 +2593,8 @@
   },
   {
     "name": "송병호",
-    "turn_count": 4201,
-    "meeting_count": 124,
+    "turn_count": 4225,
+    "meeting_count": 125,
     "roles": [
       "부위원장",
       "위원",
@@ -2592,7 +2602,7 @@
       "의원"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-10-12"
+    "last_date": "2026-10-13"
   },
   {
     "name": "송은숙",
@@ -2849,13 +2859,13 @@
   },
   {
     "name": "안광수",
-    "turn_count": 15,
-    "meeting_count": 4,
+    "turn_count": 18,
+    "meeting_count": 5,
     "roles": [
       "위원"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-14"
   },
   {
     "name": "안남인",
@@ -3104,8 +3114,8 @@
   },
   {
     "name": "염창동",
-    "turn_count": 869,
-    "meeting_count": 86,
+    "turn_count": 871,
+    "meeting_count": 88,
     "roles": [
       "재정경제국장",
       "정책기획과장",
@@ -3114,7 +3124,7 @@
       "흥덕구청장"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "예산안",
@@ -3287,15 +3297,15 @@
   },
   {
     "name": "원금란",
-    "turn_count": 184,
-    "meeting_count": 16,
+    "turn_count": 198,
+    "meeting_count": 18,
     "roles": [
       "경제교통국교통정책팀장",
       "문화유산과장",
       "서원구행정지원과장"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-14"
   },
   {
     "name": "원미라",
@@ -3525,13 +3535,13 @@
   },
   {
     "name": "윤남용",
-    "turn_count": 152,
-    "meeting_count": 13,
+    "turn_count": 163,
+    "meeting_count": 14,
     "roles": [
       "문예운영과장"
     ],
     "first_date": "2025-02-21",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-14"
   },
   {
     "name": "윤문한",
@@ -3600,18 +3610,18 @@
   },
   {
     "name": "윤주철",
-    "turn_count": 47,
-    "meeting_count": 30,
+    "turn_count": 50,
+    "meeting_count": 31,
     "roles": [
       "전문위원"
     ],
     "first_date": "2024-02-26",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-13"
   },
   {
     "name": "윤충한",
-    "turn_count": 133,
-    "meeting_count": 13,
+    "turn_count": 156,
+    "meeting_count": 15,
     "roles": [
       "경제교통국기업지원팀장",
       "대변인",
@@ -3621,7 +3631,7 @@
       "투자유치단장"
     ],
     "first_date": "2022-07-07",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "윤혜정",
@@ -3655,14 +3665,14 @@
   },
   {
     "name": "이경은",
-    "turn_count": 379,
-    "meeting_count": 21,
+    "turn_count": 399,
+    "meeting_count": 23,
     "roles": [
       "기업지원과장",
       "청원구내수읍장"
     ],
     "first_date": "2024-12-13",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "이관영",
@@ -3877,8 +3887,8 @@
   },
   {
     "name": "이상범",
-    "turn_count": 559,
-    "meeting_count": 21,
+    "turn_count": 633,
+    "meeting_count": 22,
     "roles": [
       "기반성장과장",
       "도시개발과장",
@@ -3920,8 +3930,8 @@
   },
   {
     "name": "이상조",
-    "turn_count": 2670,
-    "meeting_count": 121,
+    "turn_count": 2721,
+    "meeting_count": 123,
     "roles": [
       "경제문화위원장직무대리",
       "부위원장",
@@ -3929,7 +3939,7 @@
       "의원"
     ],
     "first_date": "2023-04-17",
-    "last_date": "2026-09-07"
+    "last_date": "2026-10-20"
   },
   {
     "name": "이상종",
@@ -4001,8 +4011,8 @@
   },
   {
     "name": "이순복",
-    "turn_count": 188,
-    "meeting_count": 18,
+    "turn_count": 198,
+    "meeting_count": 19,
     "roles": [
       "미래산업과장",
       "상당구용암제2동장",
@@ -4010,7 +4020,7 @@
       "예산과장"
     ],
     "first_date": "2023-11-28",
-    "last_date": "2026-09-07"
+    "last_date": "2026-10-14"
   },
   {
     "name": "이순희",
@@ -4307,13 +4317,13 @@
   },
   {
     "name": "이재천",
-    "turn_count": 228,
-    "meeting_count": 10,
+    "turn_count": 229,
+    "meeting_count": 11,
     "roles": [
       "감사관"
     ],
     "first_date": "2025-03-28",
-    "last_date": "2026-09-01"
+    "last_date": "2026-10-13"
   },
   {
     "name": "이재철",
@@ -4328,15 +4338,15 @@
   },
   {
     "name": "이정미",
-    "turn_count": 316,
-    "meeting_count": 16,
+    "turn_count": 330,
+    "meeting_count": 17,
     "roles": [
       "정책기획과장",
       "청주시정연구원경영지원부장",
       "체육교육과장"
     ],
     "first_date": "2024-11-22",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-13"
   },
   {
     "name": "이정우",
@@ -4583,8 +4593,8 @@
   },
   {
     "name": "이현숙",
-    "turn_count": 421,
-    "meeting_count": 17,
+    "turn_count": 426,
+    "meeting_count": 18,
     "roles": [
       "관광과장",
       "도서관평생학습본부청주오창호수도서관사서팀장",
@@ -4592,7 +4602,7 @@
       "청원구행정지원과장"
     ],
     "first_date": "2023-06-21",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-14"
   },
   {
     "name": "이현정",
@@ -4903,13 +4913,13 @@
   },
   {
     "name": "전문위원",
-    "turn_count": 762,
-    "meeting_count": 762,
+    "turn_count": 765,
+    "meeting_count": 765,
     "roles": [
       "출석"
     ],
     "first_date": "2022-07-06",
-    "last_date": "2026-10-14"
+    "last_date": "2026-10-20"
   },
   {
     "name": "전미옥",
@@ -4958,13 +4968,13 @@
   },
   {
     "name": "전재정",
-    "turn_count": 9,
-    "meeting_count": 2,
+    "turn_count": 17,
+    "meeting_count": 3,
     "roles": [
       "체육교육과장"
     ],
     "first_date": "2026-08-31",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-14"
   },
   {
     "name": "전지연",
@@ -5056,14 +5066,14 @@
   },
   {
     "name": "정무신",
-    "turn_count": 84,
-    "meeting_count": 6,
+    "turn_count": 116,
+    "meeting_count": 8,
     "roles": [
       "부위원장",
       "위원"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-09-07"
+    "last_date": "2026-10-20"
   },
   {
     "name": "정미영",
@@ -5099,8 +5109,8 @@
   },
   {
     "name": "정상미",
-    "turn_count": 596,
-    "meeting_count": 52,
+    "turn_count": 603,
+    "meeting_count": 54,
     "roles": [
       "농업정책과장",
       "문화체육관광국장",
@@ -5108,7 +5118,7 @@
       "청원구오창읍장"
     ],
     "first_date": "2022-08-30",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "정상옥",
@@ -5143,8 +5153,8 @@
   },
   {
     "name": "정연숙",
-    "turn_count": 3422,
-    "meeting_count": 127,
+    "turn_count": 3476,
+    "meeting_count": 128,
     "roles": [
       "부위원장",
       "위원",
@@ -5153,7 +5163,7 @@
       "행정안전위원장"
     ],
     "first_date": "2022-07-06",
-    "last_date": "2026-09-09"
+    "last_date": "2026-10-13"
   },
   {
     "name": "정영래",
@@ -5379,14 +5389,14 @@
   },
   {
     "name": "조남호",
-    "turn_count": 962,
-    "meeting_count": 41,
+    "turn_count": 992,
+    "meeting_count": 43,
     "roles": [
       "문예운영과장",
       "문화예술과장"
     ],
     "first_date": "2023-02-16",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "조만동",
@@ -5402,8 +5412,8 @@
   },
   {
     "name": "조민숙",
-    "turn_count": 547,
-    "meeting_count": 34,
+    "turn_count": 556,
+    "meeting_count": 35,
     "roles": [
       "미래산업과장",
       "신성장산업과장",
@@ -5411,7 +5421,7 @@
       "환경관리본부환경정책과장"
     ],
     "first_date": "2024-02-21",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-13"
   },
   {
     "name": "조민호",
@@ -5646,8 +5656,8 @@
   },
   {
     "name": "차영호",
-    "turn_count": 564,
-    "meeting_count": 88,
+    "turn_count": 572,
+    "meeting_count": 89,
     "roles": [
       "기획행정실장",
       "문화체육관광국장",
@@ -5655,7 +5665,7 @@
       "청주고인쇄박물관장"
     ],
     "first_date": "2023-02-20",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-13"
   },
   {
     "name": "차재혁",
@@ -5669,8 +5679,8 @@
   },
   {
     "name": "참석자",
-    "turn_count": 114,
-    "meeting_count": 114,
+    "turn_count": 115,
+    "meeting_count": 115,
     "roles": [
       "기타"
     ],
@@ -5795,13 +5805,13 @@
   },
   {
     "name": "최서진",
-    "turn_count": 16,
-    "meeting_count": 4,
+    "turn_count": 23,
+    "meeting_count": 5,
     "roles": [
       "위원"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-13"
   },
   {
     "name": "최석렬",
@@ -5871,14 +5881,14 @@
   },
   {
     "name": "최원근",
-    "turn_count": 1376,
-    "meeting_count": 48,
+    "turn_count": 1391,
+    "meeting_count": 50,
     "roles": [
       "경제일자리과장",
       "안전정책과장"
     ],
     "first_date": "2023-08-30",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-20"
   },
   {
     "name": "최은희",
@@ -5893,14 +5903,14 @@
   },
   {
     "name": "최익수",
-    "turn_count": 254,
-    "meeting_count": 10,
+    "turn_count": 310,
+    "meeting_count": 11,
     "roles": [
       "위원",
       "의원"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-10-12"
+    "last_date": "2026-10-13"
   },
   {
     "name": "최재호",
@@ -5952,14 +5962,14 @@
   },
   {
     "name": "최진아",
-    "turn_count": 150,
-    "meeting_count": 8,
+    "turn_count": 191,
+    "meeting_count": 10,
     "roles": [
       "위원",
       "의원"
     ],
     "first_date": "2026-07-03",
-    "last_date": "2026-10-12"
+    "last_date": "2026-10-20"
   },
   {
     "name": "최효영",
@@ -5973,14 +5983,14 @@
   },
   {
     "name": "출석",
-    "turn_count": 903,
-    "meeting_count": 903,
+    "turn_count": 906,
+    "meeting_count": 906,
     "roles": [
       "위원",
       "의원"
     ],
     "first_date": "2022-07-01",
-    "last_date": "2026-10-14"
+    "last_date": "2026-10-20"
   },
   {
     "name": "표순철",
@@ -6004,13 +6014,13 @@
   },
   {
     "name": "풍수련",
-    "turn_count": 84,
-    "meeting_count": 3,
+    "turn_count": 117,
+    "meeting_count": 4,
     "roles": [
       "정보통신과장"
     ],
     "first_date": "2026-09-01",
-    "last_date": "2026-09-04"
+    "last_date": "2026-10-13"
   },
   {
     "name": "풍연숙",
@@ -6264,8 +6274,8 @@
   },
   {
     "name": "홍성각",
-    "turn_count": 2016,
-    "meeting_count": 120,
+    "turn_count": 2065,
+    "meeting_count": 122,
     "roles": [
       "경제문화위원장",
       "위원",
@@ -6274,7 +6284,7 @@
       "환경위원장"
     ],
     "first_date": "2022-07-04",
-    "last_date": "2026-09-09"
+    "last_date": "2026-10-20"
   },
   {
     "name": "홍순덕",
@@ -6290,8 +6300,8 @@
   },
   {
     "name": "홍순철",
-    "turn_count": 1181,
-    "meeting_count": 128,
+    "turn_count": 1200,
+    "meeting_count": 130,
     "roles": [
       "보건환경위원장직무대리",
       "부위원장",
@@ -6302,7 +6312,7 @@
       "의회운영위원장직무대리"
     ],
     "first_date": "2022-07-06",
-    "last_date": "2026-09-09"
+    "last_date": "2026-10-20"
   },
   {
     "name": "홍연표",
@@ -6395,14 +6405,14 @@
   },
   {
     "name": "황승서",
-    "turn_count": 87,
-    "meeting_count": 4,
+    "turn_count": 103,
+    "meeting_count": 5,
     "roles": [
       "안전정책과장",
       "환경관리본부자원정책팀장"
     ],
     "first_date": "2023-03-23",
-    "last_date": "2026-09-03"
+    "last_date": "2026-10-13"
   },
   {
     "name": "황종대",
