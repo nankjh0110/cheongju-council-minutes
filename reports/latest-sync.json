@@ -1,17 +1,24 @@
 {
-  "checkedAt": "2026-11-03T12:28:00.237838+09:00",
+  "checkedAt": "2026-11-04T11:17:13.352818+09:00",
   "mode": "incremental",
-  "collected": 911,
+  "collected": 919,
   "new": [
-    "minutes-4026",
-    "minutes-4027",
-    "minutes-4030",
-    "minutes-4031"
+    "minutes-4032",
+    "minutes-4033",
+    "minutes-4034",
+    "minutes-4035",
+    "minutes-4037",
+    "minutes-4038",
+    "minutes-4039",
+    "minutes-4040"
   ],
-  "changed": [],
-  "bodiesChecked": 12,
+  "changed": [
+    "minutes-4025",
+    "minutes-4024"
+  ],
+  "bodiesChecked": 20,
   "superseded": {},
-  "provisional": 12,
+  "provisional": 20,
   "onlyTerm": [
     "minutes-2951",
     "minutes-3315",
